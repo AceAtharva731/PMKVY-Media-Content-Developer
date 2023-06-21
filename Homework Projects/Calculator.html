@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Calculator.css">
+</head>
+
+<body>
+    <header align="center"><h1 style="font-weight: bolder;font-size: 50px;">Calculator</h1></header>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div class="buttons">
+            <button onclick="clearResult()">AC</button>
+            <button onclick="appendToResult(7)">7</button>
+            <button onclick="appendToResult(8)">8</button>
+            <button onclick="appendToResult(9)">9</button>
+            <button class="operator" onclick="appendToResult('/')">/</button>
+            <button onclick="appendToResult(4)">4</button>
+            <button onclick="appendToResult(5)">5</button>
+            <button onclick="appendToResult(6)">6</button>
+            <button class="operator" onclick="appendToResult('*')">*</button>
+            <button onclick="appendToResult(1)">1</button>
+            <button onclick="appendToResult(2)">2</button>
+            <button onclick="appendToResult(3)">3</button>
+            <button class="operator" onclick="appendToResult('-')">-</button>
+            <button onclick="appendToResult(0)">0</button>
+            <button onclick="appendToResult('.')">.</button>
+            <button class="equal" onclick="calculateResult()">=</button>
+            <button class="operator" onclick="appendToResult('+')">+</button>
+            <button class="trig-operator" onclick="appendToResult('Sin')">Sin</button>
+            <button class="trig-operator" onclick="appendToResult('Cos')">Cos</button>
+            <button class="trig-operator" onclick="appendToResult('Tan')">Tan</button>
+        </div>
+    </div>
+
+    <script>
+        function appendToResult(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function calculateResult() {
+            let result = document.getElementById('result').value;
+            let calculatedResult = eval(result);
+            document.getElementById('result').value = calculatedResult;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+    </script>
+    <footer><h3>@ Atharva Pardeshi</h3></footer>
+
+</body>
+
+</html>
